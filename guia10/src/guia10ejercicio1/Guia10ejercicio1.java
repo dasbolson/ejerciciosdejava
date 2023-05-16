@@ -40,9 +40,6 @@ public class Guia10ejercicio1 {
             System.out.println(razasDePerro);
         }
         
-        
-        
-        
     }
 
     
