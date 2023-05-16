@@ -22,7 +22,7 @@ public class Guia10ejercicio1 {
      */
     public static void main(String[] args) {
         
-        String raza;
+        String raza, opcion;
         Scanner leer=new Scanner(System.in).useDelimiter("\n");
         ArrayList<String> razasDePerros = new ArrayList();
       
@@ -31,11 +31,14 @@ public class Guia10ejercicio1 {
             raza = leer.next();
             razasDePerros.add(raza);
             
-            System.out.println("Desea ingresar una nueva Raza");
+            System.out.println("Desea ingresar un nuev registro de Raza (S/N)");
+            opcion= leer.next();
             
-        } while (true);
+        } while (opcion.equalsIgnoreCase("s"));
         
-        
+        for (String razasDePerro : razasDePerros) {
+            System.out.println(razasDePerro);
+        }
         
         
         
