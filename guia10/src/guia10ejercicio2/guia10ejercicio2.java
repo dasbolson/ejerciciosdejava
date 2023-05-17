@@ -9,6 +9,7 @@ la lista ordenada.
 package guia10ejercicio2;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.Scanner;
 
@@ -52,7 +53,7 @@ public class guia10ejercicio2 {
 
                 default:
                     System.out.println("Opcion no Valida");
-                    ;
+
             }
 
         } while (opcion != 4);
@@ -91,25 +92,30 @@ public class guia10ejercicio2 {
         String raza;
         System.out.println("Ingrese que Raza quiere borrar de la Lista");
         raza = leer.next();
-        while (it.hasNext()) {
-            
-        
-        
-            if (it.next().equals(raza)) {
-                System.out.println("La Raza ingresada Esta presente en la lista ");
-                it.remove();
-                for (String razasDePerro : razasDePerros) {
-                    System.out.println(razasDePerro + " ");
-                }
-            } else {
-                System.out.println("La Raza ingresada NO Esta presente en la lista ");
-                for (String razasDePerro : razasDePerros) {
-                    System.out.println(razasDePerro + " ");
+
+        if (razasDePerros.contains(raza)) {
+
+            while (it.hasNext()) {
+
+                if (it.next().equals(raza)) {
+                    System.out.println("La Raza ingresada Esta presente en la lista ");
+                    System.out.println("Se borrara -> " + raza);
+                    it.remove();
                 }
             }
+        } else {
+            System.out.println("La Raza ingresada NO Esta presente en la lista ");
+        }
+    
+         Collections.sort(razasDePerros);
+        for (String razasDePerro : razasDePerros) {
+            System.out.println(razasDePerro + " ");
 
         }
-
     }
-
+    
 }
+
+    
+
+    
