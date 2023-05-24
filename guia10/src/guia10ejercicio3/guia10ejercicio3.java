@@ -33,46 +33,44 @@ public class guia10ejercicio3 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-
+        
         Scanner leer = new Scanner(System.in).useDelimiter("\n");
-        ArrayList<Alumno> listaAlumno = new ArrayList();
+        ArrayList <Alumno> listaAlumno = new ArrayList();
         ServicioAlumno sa = new ServicioAlumno();
-        String opcionMenu, consulta;
+        //Alumno al ;
+        String consulta, name;
         boolean estaEnLaLista = false;
-        Iterator<Alumno> it = listaAlumno.iterator();
+        Iterator <Alumno> it= listaAlumno.iterator();
         System.out.println("Hola Bienvenido ");
         do {
             listaAlumno.add(sa.crearAlumno());
             System.out.print("Ingresar un nuevo Alumno -> (S/N) ");
             // opcionMenu=leer.next();
         } while (leer.next().equalsIgnoreCase("s"));
-
+        
         System.out.print("Mostrar nota final del siguiente Alumno, Ingresar nombre: ");
         consulta = leer.next();
-
+        
         for (Alumno alumno : listaAlumno) {
             if (alumno.getNombre().equalsIgnoreCase(consulta)) {
                 estaEnLaLista = true;
             }
-            //System.out.println(" esta en la lista "+estaEnLaLista);
         }
         
         if (estaEnLaLista) {
 
             for (Alumno alumno : listaAlumno) {
-                
+                if (alumno.getNombre().equalsIgnoreCase(consulta)) {
+                  System.out.println("Alumno: " + alumno.getNombre());
+                System.out.println("Nota Final Promedio: " + sa.notaFinal(alumno));
+                }
             }
-            while (it.hasNext()) {
-               // if((it.next().equals(it)) {
-                    System.out.println("Alumno: " + it.next().getNombre());
-                    System.out.println("Nota Final Promedio: " + sa.notaFinal(it.next()));
-            //    }
-
-            }
-        }else{
+          
+             
+        } else {
             System.out.println(" El nombre ingresado no esta en la lista");
         }
-
+        
     }
-
+    
 }
