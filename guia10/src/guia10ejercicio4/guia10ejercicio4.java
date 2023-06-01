@@ -22,6 +22,11 @@ pantalla.
 
 package guia10ejercicio4;
 
+import guia10ejercicio4.Entidades.Pelicula;
+import guia10ejercicio4.Servicio.ServicioPelicula;
+import java.util.ArrayList;
+import java.util.Scanner;
+
 /**
  *
  * @author Casa
@@ -32,7 +37,21 @@ public class guia10ejercicio4 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        
+        
+        
+        ArrayList<Pelicula> listaPeliculas = new ArrayList();
+        Scanner leer = new Scanner(System.in).useDelimiter("\n");
+        ServicioPelicula sp= new ServicioPelicula();
+        sp.crearListaDePeliculas(listaPeliculas);
+        System.out.println(listaPeliculas.toString());
+        sp.mostrarPeliculas(listaPeliculas);
+        sp.peliculasMas1Hora(listaPeliculas);
+        
+        System.out.println("Chauu !");
+        
+        
+        
     }
     
 }

@@ -23,6 +23,7 @@ package guia10ejercicio4.Servicio;
 
 import guia10ejercicio4.Entidades.Pelicula;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 /**
@@ -41,23 +42,57 @@ public class ServicioPelicula {
         String director = leer.next();
         System.out.println("Ingresar Duracion de La Pelicula");
         double duracion = leer.nextDouble();
-        
+
         Pelicula peli = new Pelicula(titulo, director, duracion);
 
         return peli;
     }
 
-    public ArrayList<Pelicula> crearListaDePeliculas() {
-        String menu;
-        do {
-        
-        System.out.println("Crear Pelicula");
-        System.out.println("---------------");
-        ArrayList<Pelicula> peliculas = new ArrayList();
-        peliculas.add(crearPelicula());
-        System.out.println("");
-        System.out.println("Ingresar otra Pelicula -> S/N");
-         } while (leer.);
-    }
+    public void crearListaDePeliculas(ArrayList<Pelicula> listaPeliculas) {
 
+        // ArrayList<Pelicula> listaPeliculas ;
+        do {
+
+            System.out.println("Crear Pelicula");
+            System.out.println("---------------");
+            //listaPeliculas = new ArrayList();
+            listaPeliculas.add(crearPelicula());
+            System.out.println("");
+            System.out.println("Ingresar otra Pelicula -> S/N");
+
+        } while (leer.next().equalsIgnoreCase("s"));
+
+    }
+// • Mostrar en pantalla todas las películas.
+
+    public void mostrarPeliculas(ArrayList<Pelicula> listaPeliculas) {
+
+        for (Pelicula listaPelicula : listaPeliculas) {
+
+            System.out.println(listaPelicula.toString());
+
+        }
+    }
+// • Mostrar en pantalla todas las películas con una duración mayor a 1 hora.
+
+    public void peliculasMas1Hora(ArrayList<Pelicula> listaPeliculas) {
+
+        for (Pelicula listaPelicula : listaPeliculas) {
+
+            if (listaPelicula.getDuracion() > 1) {
+                System.out.println("Pelicula con duracion mayor a una hora ");
+                System.out.println(listaPelicula.toString());
+            }
+        }
+    }
+    
+    // • Ordenar las películas de acuerdo a su duración (de mayor a menor) y mostrarlo en pantalla.
+    
+    public void mayorAMenorDuracion(ArrayList<Pelicula> listaPeliculas){
+    
+    
+      //  listaPeliculas.sort(cmprtr);
+        
+    
+    }
 }

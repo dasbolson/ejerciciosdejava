@@ -21,8 +21,8 @@ pantalla.
  */
 package guia10ejercicio4.Entidades;
 
-import java.sql.Time;
-import java.util.Date;
+
+import java.util.Comparator;
 
 /**
  *
@@ -32,12 +32,12 @@ public class Pelicula {
 
     private String titulo;
     private String director;
-    private double duracion;
+    private Double duracion;
 
     public Pelicula() {
     }
 
-    public Pelicula(String titulo, String director, double duracion) {
+    public Pelicula(String titulo, String director, Double duracion) {
         this.titulo = titulo;
         this.director = director;
         this.duracion = duracion;
@@ -59,14 +59,26 @@ public class Pelicula {
         this.director = director;
     }
 
-    public double getDuracion() {
+    public Double getDuracion() {
         return duracion;
     }
 
-    public void setDuracion(double duracion) {
+    public void setDuracion(Double duracion) {
         this.duracion = duracion;
     }
 
-    
-    
+    @Override
+    public String toString() {
+        return "Pelicula{" + "titulo=" + titulo + ", director=" + director + ", duracion=" + duracion + '}';
+    }
+
+    public static Comparator <Pelicula> comparaDuracion = new Comparator<Pelicula>() {
+        @Override
+        public int compare(Pelicula t, Pelicula t1) {
+
+
+            return t1.getDuracion().compareTo(t.getDuracion());
+        }
+    };
+   
 }
