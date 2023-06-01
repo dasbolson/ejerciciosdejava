@@ -21,7 +21,6 @@ pantalla.
  */
 package guia10ejercicio4.Entidades;
 
-
 import java.util.Comparator;
 
 /**
@@ -72,13 +71,28 @@ public class Pelicula {
         return "Pelicula{" + "titulo=" + titulo + ", director=" + director + ", duracion=" + duracion + '}';
     }
 
-    public static Comparator <Pelicula> comparaDuracion = new Comparator<Pelicula>() {
+    public static Comparator<Pelicula> comparaDuracion = new Comparator<Pelicula>() {
         @Override
         public int compare(Pelicula t, Pelicula t1) {
 
-
-            return t1.getDuracion().compareTo(t.getDuracion());
+            return t.getDuracion().compareTo(t1.getDuracion());
         }
     };
-   
+
+    public static Comparator<Pelicula> compararTitulo = new Comparator<Pelicula>() {
+        @Override
+        public int compare(Pelicula t, Pelicula t1) {
+
+            return t.getTitulo().compareToIgnoreCase(t1.getTitulo());
+        }
+    };
+
+    public static Comparator<Pelicula> compararDirector = new Comparator<Pelicula>() {
+        @Override
+        public int compare(Pelicula t, Pelicula t1) {
+
+            return t.getDirector().compareToIgnoreCase(t1.getDirector());
+        }
+
+    };
 }

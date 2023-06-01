@@ -55,8 +55,14 @@ public class ServicioPelicula {
 
             System.out.println("Crear Pelicula");
             System.out.println("---------------");
-            //listaPeliculas = new ArrayList();
-            listaPeliculas.add(crearPelicula());
+
+            // listaPeliculas.add(crearPelicula());
+            listaPeliculas.add(new Pelicula("pepin", "tolo", 2.0));
+            listaPeliculas.add(new Pelicula("Iepin1", "Rolo1", 1.0));
+            listaPeliculas.add(new Pelicula("Repin2", "Holo2", 3.0));
+            listaPeliculas.add(new Pelicula("Bepin3", "aolo3", 1.0));
+            listaPeliculas.add(new Pelicula("aepin4", "Molo4", 2.0));
+
             System.out.println("");
             System.out.println("Ingresar otra Pelicula -> S/N");
 
@@ -85,14 +91,46 @@ public class ServicioPelicula {
             }
         }
     }
-    
+
     // • Ordenar las películas de acuerdo a su duración (de mayor a menor) y mostrarlo en pantalla.
-    
-    public void mayorAMenorDuracion(ArrayList<Pelicula> listaPeliculas){
-    
-    
-      //  listaPeliculas.sort(cmprtr);
-        
-    
+    public void mayorAMenorDuracion(ArrayList<Pelicula> listaPeliculas) {
+
+        listaPeliculas.sort(Pelicula.comparaDuracion);
+        Collections.reverse(listaPeliculas);
+        for (Pelicula listaPelicula : listaPeliculas) {
+            System.out.println(listaPelicula.toString());
+        }
     }
+    // Ordenar las películas de acuerdo a su duración (de menor a mayor) y mostrarlo en pantalla.
+
+    public void menorAMayorDuracion(ArrayList<Pelicula> listaPeliculas) {
+
+        listaPeliculas.sort(Pelicula.comparaDuracion);
+        for (Pelicula listaPelicula : listaPeliculas) {
+            System.out.println(listaPelicula.toString());
+        }
+
+    }
+    //Ordenar las películas por título, alfabéticamente y mostrarlo en pantalla.
+
+    public void ordenarPorTitulo(ArrayList<Pelicula> listaPeliculas) {
+
+        listaPeliculas.sort(Pelicula.compararTitulo);
+
+        for (Pelicula listaPelicula : listaPeliculas) {
+            System.out.println(listaPelicula.toString());
+        }
+
+    }
+
+//// Ordenar las películas por director, alfabéticamente y mostrarlo en pantalla
+    public void compararDirector(ArrayList<Pelicula> listaPeliculas) {
+
+        listaPeliculas.sort(Pelicula.compararDirector);
+        for (Pelicula listaPelicula : listaPeliculas) {
+            System.out.println(listaPelicula.toString());
+        }
+
+    }
+
 }

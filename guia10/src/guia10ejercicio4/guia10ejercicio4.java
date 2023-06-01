@@ -19,7 +19,6 @@ pantalla.
 • Ordenar las películas por director, alfabéticamente y mostrarlo en pantalla
 
  */
-
 package guia10ejercicio4;
 
 import guia10ejercicio4.Entidades.Pelicula;
@@ -38,19 +37,36 @@ public class guia10ejercicio4 {
      */
     public static void main(String[] args) {
         
-        
-        
         ArrayList<Pelicula> listaPeliculas = new ArrayList();
         Scanner leer = new Scanner(System.in).useDelimiter("\n");
-        ServicioPelicula sp= new ServicioPelicula();
+        ServicioPelicula sp = new ServicioPelicula();
+        System.out.println("Crear peliculas");
+        System.out.println("");
         sp.crearListaDePeliculas(listaPeliculas);
+        System.out.println("Crear lista de  peliculas");
+        System.out.println("");
         System.out.println(listaPeliculas.toString());
+        System.out.println("Mostrar lista de peliculas ");
+        System.out.println("");
         sp.mostrarPeliculas(listaPeliculas);
+        System.out.println("Mostrar lista de peliculas de mas de 1 hora");
+        System.out.println("");
         sp.peliculasMas1Hora(listaPeliculas);
-        
+        System.out.println("Ordenar las películas de acuerdo a su duración (de mayor a menor) y mostrarlo en\n"
+                + "pantalla");
+        System.out.println("");
+        sp.mayorAMenorDuracion(listaPeliculas);
+        System.out.println("Ordenar las películas de acuerdo a su duración (de menor a mayor) y mostrarlo en\n"
+                + "pantalla.");
+        System.out.println("");
+        sp.menorAMayorDuracion(listaPeliculas);
+        System.out.println("Ordenar las películas por título, alfabéticamente y mostrarlo en pantalla");
+        System.out.println("");
+        sp.ordenarPorTitulo(listaPeliculas);
+        System.out.println("Ordenar las películas por director, alfabéticamente y mostrarlo en pantalla");
+        System.out.println("");
+        sp.compararDirector(listaPeliculas);
         System.out.println("Chauu !");
-        
-        
         
     }
     
