@@ -22,14 +22,59 @@ Pensar la lógica necesaria para realizar esto, usando los atributos de la clase
  */
 package guia11ejercicio2.Entidades;
 
-
 public class Jugador {
-    
+
     private Integer id;
-    private String nombre="Jugador "+id;
+    private String nombre = "Jugador " + id;
     private Boolean mojado;
+
+    public Jugador() {
+    }
+
+    public Jugador(Integer id, Boolean mojado) {
+        this.id = id;
+        this.mojado = mojado;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public Boolean getMojado() {
+        return mojado;
+    }
+
+    public void setMojado(Boolean mojado) {
+        this.mojado = mojado;
+    }
+
+//    • disparo(Revolver r): el método, recibe el revolver de agua y llama a los métodos de
+//  mojar() y siguienteChorro() de Revolver. El jugador se apunta, aprieta el gatillo y si el
+//  revolver tira el agua, el jugador se moja. El atributo mojado pasa a false y el método
+//  devuelve true, sino false.
     
     
+    
+    public Boolean disparo(RevolverDeAgua r){
+        Boolean mojado;
+        
+        mojado = !r.mojar();
+        r.siguienteChorro();
+        this.mojado=mojado;
+        return mojado;
+    }
     
     
 }

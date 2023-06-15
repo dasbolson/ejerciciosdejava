@@ -67,6 +67,7 @@ public class RevolverDeAgua {
         if (posicionActual > 9) {
             posicionActual = 1;
         }
+          
     }
 // • toString(): muestra información del revolver (posición actual y donde está el agua)
 
@@ -74,7 +75,10 @@ public class RevolverDeAgua {
 
         System.out.println("Posicion Actual"+posicionActual.toString());
         System.out.println("Posiscion Agua"+posicionAgua.toString());
-
+      
     }
 
+    
+    
+    
 }
