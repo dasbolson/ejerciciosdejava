@@ -48,8 +48,11 @@ public class RevolverDeAgua {
     // llenarRevolver(): le pone los valores de posición actual y de posición del agua. Los valores
     // deben ser aleatorios.
     public RevolverDeAgua llenarRevolver(RevolverDeAgua revolverDeAgua) {
-        this.posicionActual = (int) (Math.random() * 10);
-        this.posicionAgua = (int) (Math.random() * 10);
+       // this.posicionActual = (int) (Math.random() * 10);
+       // this.posicionAgua = (int) (Math.random() * 10);
+       revolverDeAgua.posicionActual=(int) (Math.random() * 10);
+       revolverDeAgua.posicionAgua=(int) (Math.random() * 10);
+        
         return revolverDeAgua;
 
     }
@@ -57,7 +60,7 @@ public class RevolverDeAgua {
 
     public Boolean mojar() {
 
-        return posicionActual == posicionAgua;
+        return (posicionActual == posicionAgua);
     }
     //siguienteChorro(): cambia a la siguiente posición del tambor 
 
@@ -73,8 +76,8 @@ public class RevolverDeAgua {
 
     public void mostrarInfo() {
 
-        System.out.println("Posicion Actual"+posicionActual.toString());
-        System.out.println("Posiscion Agua"+posicionAgua.toString());
+        System.out.println(posicionActual.toString());
+        System.out.println(posicionAgua.toString());
       
     }
 

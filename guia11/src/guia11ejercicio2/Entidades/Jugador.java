@@ -25,14 +25,15 @@ package guia11ejercicio2.Entidades;
 public class Jugador {
 
     private Integer id;
-    private String nombre = "Jugador " + id;
+    private String nombre;
     private Boolean mojado;
 
     public Jugador() {
     }
 
-    public Jugador(Integer id, Boolean mojado) {
+    public Jugador(Integer id, String nombre, Boolean mojado) {
         this.id = id;
+        this.nombre = nombre + id;
         this.mojado = mojado;
     }
 
@@ -64,17 +65,21 @@ public class Jugador {
 //  mojar() y siguienteChorro() de Revolver. El jugador se apunta, aprieta el gatillo y si el
 //  revolver tira el agua, el jugador se moja. El atributo mojado pasa a false y el método
 //  devuelve true, sino false.
-    
-    
-    
-    public Boolean disparo(RevolverDeAgua r){
+    public Boolean disparo(RevolverDeAgua r) {
+
         Boolean mojado;
-        
+
         mojado = !r.mojar();
         r.siguienteChorro();
-        this.mojado=mojado;
+        this.mojado = mojado;
         return mojado;
     }
-    
-    
+
+    @Override
+    public String toString() {
+        return "Jugador{" + "id=" + id + ", nombre=" + nombre + ", mojado=" + mojado + '}';
+    }
+
+
+
 }

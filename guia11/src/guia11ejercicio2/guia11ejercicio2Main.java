@@ -31,16 +31,43 @@ moja, se pasa al siguiente jugador hasta que uno se moje. Si o si alguien se tie
 mojar. Al final del juego, se debe mostrar que jugador se mojó.
 Pensar la lógica necesaria para realizar esto, usando los atributos de la clase Juego
  */
-
 package guia11ejercicio2;
 
+import guia11ejercicio2.Entidades.Juego;
+import guia11ejercicio2.Entidades.Jugador;
+import guia11ejercicio2.Entidades.RevolverDeAgua;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Scanner;
 
 public class guia11ejercicio2Main {
 
-   
     public static void main(String[] args) {
-     
 
+        Scanner leer = new Scanner(System.in).useDelimiter("\n");
+        RevolverDeAgua r = new RevolverDeAgua();
+        Jugador jugador = new Jugador();
+        Juego juegoMain = new Juego();
+        ArrayList<Jugador> listaJugadores = new ArrayList<>();
+        int cantidadDeJugadores;
+        Integer id;
+        String nombre;
+        Boolean mojado = true;
+
+        System.out.println("Ingresar cantidad de Jugdores");
+        cantidadDeJugadores = leer.nextInt();
+        r.llenarRevolver(r);
+        for (int i = 0; i < cantidadDeJugadores; i++) {
+            System.out.print("Ingresar Nombre: ");
+            id = i + 1;
+            nombre = leer.next();
+            System.out.println(nombre + " " + id + " " + mojado);
+
+            listaJugadores.add(new Jugador(id, nombre, mojado));
+        }
+        juegoMain.llenarJuego(listaJugadores, r);
+        juegoMain.ronda();
+        
     }
 
 }
