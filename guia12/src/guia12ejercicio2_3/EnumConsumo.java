@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package guia12Ejercicio2.Enumeraciones;
+package guia12ejercicio2_3;
 
 /**
  *
  * @author Casa
  */
-public enum EnumConsumoDeEnergia {
-    A,B,C,D,E,F;
+public enum EnumConsumo {
+    A, B, C, D, E, F
 }

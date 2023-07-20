@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package guia12Ejercicio2.Enumeraciones;
+package guia12ejercicio2_3;
 
 /**
  *
  * @author Casa
  */
-public enum EnumColorDeElectrodomestico {
-    BLANCO, NEGRO, ROJO, AZUL, GRIS ;
+public enum EnumColorElectrodomestico {
+    BLANCO, NEGRO, ROJO, AZUL, GRIS 
 }

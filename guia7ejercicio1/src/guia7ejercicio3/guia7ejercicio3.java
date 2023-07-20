@@ -57,7 +57,24 @@ public class guia7ejercicio3 {
 
         PersonaServicio ps = new PersonaServicio();
 
+       // Ejercico modificado desde la guia 13 ejercicio 1 de Excepciones 
+       
         Persona individuo = new Persona();
+        
+        individuo= null;
+        
+      try{
+        
+        ps.esMayorDeEdad(individuo);
+        
+      }catch(NullPointerException a){
+      
+          System.out.println("Error , falta cargar la persona, esta null");
+      }
+      
+      // aca termina el ejercicio de la guia 13 ejercicio 1 (Excepciones) 
+      
+      /*  Persona individuo = new Persona();
         ps.crearPersona(individuo);
 
         Persona individuo1 = new Persona();
@@ -90,6 +107,7 @@ public class guia7ejercicio3 {
         System.out.println(individuo3.toString());
 
         System.out.println(" Chauuuu !!!!");
+*/
     }
 
     public static void porcentajePeso(byte[] IMC) {
